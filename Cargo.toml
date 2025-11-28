@@ -1,0 +1,25 @@
+[package]
+name = "crate"
+version = "0.1.0"
+edition = "2024"
+authors = ["Tina-1300"]
+license = "MIT"
+repository = "https://github.com/Tina-1300/crate"
+description = "rate is a cross-platform tool that clears all installed Rust crates from the .cargo/registry folder, helping you free up disk space. It works on Windows, macOS, and Linux."
+keywords = ["crates", "windows", "linux", "macos"]
+
+[dependencies]
+clap = { version = "4.5.53", features = ["derive"] }
+indicatif = "0.18.3"
+colored = "3.0.0"
+
+
+[profile.release]
+panic = "abort" # Strip expensive panic clean-up logic
+codegen-units = 1 # Compile crates one after another so the compiler can optimize better
+lto = true # Enables link to optimizations
+opt-level = "z" # Optimize for binary size
+strip = true # Remove debug symbols
+debug-assertions = false # Remove debug assertions
+rpath = false  # Disable RPATH to make binaries smaller
+incremental = false  # Disable incremental compilation (can speed up builds if there are many dependencies)
