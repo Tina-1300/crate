@@ -1,6 +1,6 @@
 [package]
 name = "crate"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Tina-1300"]
 license = "MIT"
@@ -9,7 +9,7 @@ description = "rate is a cross-platform tool that clears all installed Rust crat
 keywords = ["crates", "windows", "linux", "macos"]
 
 [dependencies]
-clap = { version = "4.5.53", features = ["derive"] }
+clap = { version = "4.5.54", features = ["derive"] }
 indicatif = "0.18.3"
 colored = "3.0.0"
 
